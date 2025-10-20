@@ -48,6 +48,7 @@ public class ConferenceServiceApplication {
                             .date(new Date())
                             .stars(1+ new Random().nextInt(5))
                             .build();
+                    reviewRepository.save(review);
                 }
             });
         };
