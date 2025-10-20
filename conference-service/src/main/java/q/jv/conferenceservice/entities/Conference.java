@@ -19,6 +19,7 @@ public class Conference {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @Enumerated(EnumType.STRING)
     private ConferenceType type;
     private Date date;
     private Long duration;
