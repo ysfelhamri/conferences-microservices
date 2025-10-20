@@ -3,6 +3,7 @@ package q.jv.conferenceservice.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import q.jv.conferenceservice.enums.ConferenceType;
+import q.jv.conferenceservice.models.Keynote;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,4 +27,5 @@ public class Conference {
     private Long keynoteId;
     @OneToMany(mappedBy = "conference")
     private List<Review> reviews = new ArrayList<>();
+    @Transient private Keynote keynote;
 }
