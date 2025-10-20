@@ -1,13 +1,12 @@
 package q.jv.conferenceservice.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import q.jv.conferenceservice.enums.ConferenceType;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor
@@ -25,4 +24,6 @@ public class Conference {
     private int inscriptions;
     private Long score;
     private Long keynoteId;
+    @OneToMany(mappedBy = "conference")
+    private List<Review> reviews = new ArrayList<>();
 }
